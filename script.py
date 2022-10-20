@@ -14,8 +14,10 @@ excel_data = pandas.read_excel('Recipients data.xlsx', sheet_name='Recipients')
 count = 0
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get('https://web.whatsapp.com')
-input("Press ENTER after login into Whatsapp Web and your chats are visiable.")
+driver.get("https://www.google.com")
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get("https://web.whatsapp.com")
+input("Press ENTER after login into Whatsapp Web and your chats are visible.")
 for column in excel_data['Contact'].tolist():
     try:
         url = 'https://web.whatsapp.com/send?phone=' + str(excel_data['Contact'][count]) + '&text=' + excel_data['Message'][0]
